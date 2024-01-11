@@ -1,0 +1,13 @@
+(executable
+ (name cohttp_eio_jsoo_test)
+ (modes js)
+ (libraries http cohttp cohttp-eio cohttp-eio-jsoo eio js_of_ocaml-eio)
+ (js_of_ocaml (flags --enable effects))
+ (preprocess
+  (pps js_of_ocaml-ppx)))
+
+(rule
+ (alias runjstest)
+ (deps test.js cohttp_eio_jsoo_test.bc.js ../package.json (glob_files_rec ../node_modules/*))
+ (action
+   (run ./test.js)))

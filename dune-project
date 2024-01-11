@@ -379,3 +379,19 @@
   (http
    (= :version))
   (ppx_here :with-test)))
+
+(package
+ (name cohttp-eio-jsoo)
+ (synopsis "CoHTTP implementation for the Js_of_ocaml JavaScript compiler")
+ (description
+  "An implementation of an HTTP client for JavaScript, but using the\nCoHTTP types.  This lets you build HTTP clients that can compile\nnatively (using one of the other Cohttp backends such as `cohttp-eio-unix`)\nand also to native JavaScript via js_of_ocaml.\n")
+ (depends
+  (http
+   (= :version))
+  (cohttp
+   (= :version))
+  (cohttp-eio
+   (= :version))
+  eio_js
+  logs
+  (conf-npm :with-test)))

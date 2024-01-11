@@ -1,0 +1,7 @@
+(library
+ (name cohttp_eio_jsoo)
+ (public_name cohttp-eio-jsoo)
+ (synopsis "XHR/eio based http client")
+ (modes byte)
+ (preprocess (pps js_of_ocaml-ppx))
+ (libraries js_of_ocaml cohttp-eio eio_js_backend logs))
